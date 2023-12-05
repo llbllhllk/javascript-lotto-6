@@ -1,3 +1,10 @@
+const lotto = Object.freeze({
+  empty: '[ERROR] 로또 번호가 존재하지 않습니다.',
+  notANumber: '[ERROR] 로또 번호가 숫자가 아닙니다.',
+  duplicated: '[ERROR] 로또 번호가 중복되었습니다.',
+  length: '[ERROR] 로또 번호는 6개여야 합니다.',
+});
+
 const bonusNumber = Object.freeze({
   empty: '[ERROR] 보너스 번호를 입력해주세요.',
   notANumber: '[ERROR] 숫자를 입력해주세요.',
@@ -20,6 +27,7 @@ const purchaseAmount = Object.freeze({
 });
 
 const ERROR = Object.freeze({
+  lotto,
   purchaseAmount,
   winningNumbers,
   bonusNumber,

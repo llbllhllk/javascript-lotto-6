@@ -4,12 +4,13 @@ const purchaseAmount = Object.freeze({
 
 const winningNumbers = Object.freeze({
   separator: ',',
-  length: 6,
 });
 
 const lotto = Object.freeze({
+  length: 6,
   min: 1,
   max: 45,
+  separator: ', ',
 });
 
 const number = Object.freeze({

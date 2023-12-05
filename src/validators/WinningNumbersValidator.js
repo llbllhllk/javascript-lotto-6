@@ -37,7 +37,7 @@ class WinningNumbersValidator {
   }
 
   static #validateLength(formattedWinningNumbers) {
-    if (formattedWinningNumbers.length !== CONSTANTS.winningNumbers.length)
+    if (formattedWinningNumbers.length !== CONSTANTS.lotto.length)
       throw new Error(ERROR.winningNumbers.length);
   }
 
