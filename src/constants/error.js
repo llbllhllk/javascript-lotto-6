@@ -1,3 +1,9 @@
+const bonusNumber = Object.freeze({
+  empty: '[ERROR] 보너스 번호를 입력해주세요.',
+  notANumber: '[ERROR] 숫자를 입력해주세요.',
+  range: '[ERROR] 1~45사이의 번호를 입력해주세요.',
+});
+
 const winningNumbers = Object.freeze({
   empty: '[ERROR] 당첨 번호를 입력해주세요.',
   notANumber: '[ERROR] 숫자를 입력해주세요.',
@@ -16,6 +22,7 @@ const purchaseAmount = Object.freeze({
 const ERROR = Object.freeze({
   purchaseAmount,
   winningNumbers,
+  bonusNumber,
 });
 
 export default ERROR;
