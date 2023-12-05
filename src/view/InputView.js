@@ -1,6 +1,7 @@
 import { Console } from '@woowacourse/mission-utils';
 import MESSAGE from '../constants/message.js';
 import PurchaseAmountValidator from '../validators/PurchaseAmountValidator.js';
+import WinningNumbersValidator from '../validators/WinningNumbersValidator.js';
 
 const InputView = {
   async readPurchaseAmount() {
@@ -12,6 +13,7 @@ const InputView = {
 
   async readWinningNumbers() {
     const winningNumbers = await Console.readLineAsync(MESSAGE.read.winningNumbers);
+    WinningNumbersValidator.validateWinningrNumbers(winningNumbers);
 
     return winningNumbers;
   },
