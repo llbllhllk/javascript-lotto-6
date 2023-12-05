@@ -4,11 +4,18 @@ class LottoController {
   constructor() {}
 
   start() {
-    return this.inputPurchaseAmount();
+    return this.#inputPurchaseAmount();
   }
 
-  async inputPurchaseAmount() {
+  async #inputPurchaseAmount() {
     const purchaseAmount = await InputView.readPurchaseAmount();
+
+    return this.#inputWinningNumbers();
+  }
+
+  async #inputWinningNumbers() {
+    const winningNumbers = await InputView.readWinningNumbers();
+    console.log(winningNumbers);
   }
 }
 
