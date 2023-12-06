@@ -1,10 +1,4 @@
 import Lotto from '../../src/domain/Lotto.js';
-import { Random } from '@woowacourse/mission-utils';
-
-// const mockRandoms = numbers => {
-//   Random.pickUniqueNumbersInRange = jest.fn();
-//   numbers.map(number => Random.pickUniqueNumbersInRange.mockReturnValueOnce(number));
-// };
 
 describe('Lotto 클래스 테스트', () => {
   describe('lotto 메서드는 로또 번호를 반환한다.', () => {
@@ -12,6 +6,14 @@ describe('Lotto 클래스 테스트', () => {
       {
         numbers: [1, 2, 3, 4, 5, 6],
         expected: '[1, 2, 3, 4, 5, 6]',
+      },
+      {
+        numbers: [3, 6, 2, 1, 23, 34],
+        expected: '[1, 2, 3, 6, 23, 34]',
+      },
+      {
+        numbers: [1, 8, 9, 12, 24, 35],
+        expected: '[1, 8, 9, 12, 24, 35]',
       },
     ];
 
