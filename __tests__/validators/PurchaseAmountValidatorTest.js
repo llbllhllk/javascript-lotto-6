@@ -1,5 +1,5 @@
 import ERROR from '../../src/constants/error.js';
-import PurchaseAmountValidator from '../../src/validators/PurchaseAmountValidator.js';
+import PurchaseAmountValidator from '../../src/utils/validators/PurchaseAmountValidator.js';
 
 describe('구매 금액 예외 상황 테스트', () => {
   const cases = [

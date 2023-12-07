@@ -1,5 +1,5 @@
 import ERROR from '../../src/constants/error.js';
-import LottoValidator from '../../src/validators/LottoValidator.js';
+import LottoValidator from '../../src/utils/validators/LottoValidator.js';
 
 describe('로또 번호 예외 상황 테스트', () => {
   const cases = [

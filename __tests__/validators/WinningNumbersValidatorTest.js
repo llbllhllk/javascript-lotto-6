@@ -1,5 +1,5 @@
 import ERROR from '../../src/constants/error.js';
-import WinningNumbersValidator from '../../src/validators/WinningNumbersValidator.js';
+import WinningNumbersValidator from '../../src/utils/validators/WinningNumbersValidator.js';
 
 describe('당첨 번호 예외 상황 테스트', () => {
   const cases = [

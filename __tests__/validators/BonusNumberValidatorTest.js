@@ -1,5 +1,5 @@
 import ERROR from '../../src/constants/error.js';
-import BonusNumberValidator from '../../src/validators/BonusNumberValidator.js';
+import BonusNumberValidator from '../../src/utils/validators/BonusNumberValidator.js';
 
 describe('보너스 번호 예외 상황 테스트', () => {
   const cases = [

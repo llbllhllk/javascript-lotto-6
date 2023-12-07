@@ -1,5 +1,5 @@
-import CONSTANTS from '../constants/constants.js';
-import ERROR from '../constants/error.js';
+import CONSTANTS from '../../constants/constants.js';
+import ERROR from '../../constants/error.js';
 
 class BonusNumberValidator {
   static validateBonusNumber(bonusNumber) {

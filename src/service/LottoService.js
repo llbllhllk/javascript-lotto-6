@@ -1,20 +1,41 @@
 import CONSTANTS from '../constants/constants.js';
-import Lottos from '../domain/Lottos.js';
+import BonusNumber from '../domain/BonusNumber.js';
+import LottoMachine from '../domain/LottoMachine.js';
+import PurchaseAmount from '../domain/PurchaseAmount.js';
+import WinningNumbers from '../domain/WinningNumbers.js';
 
 class LottoService {
-  #lottosInstance;
+  #purchaseAmount;
 
-  constructor() {
-    this.#lottosInstance = new Lottos();
+  #bonusNumber;
+
+  #lottos;
+
+  #winningNumbers;
+
+  setPurchaseAmount(purchaseAmount) {
+    this.#purchaseAmount = new PurchaseAmount(purchaseAmount).getFormattedAmount();
   }
 
-  numberOfLotto(purchaseAmount) {
-    return purchaseAmount / CONSTANTS.purchaseAmount.thousand;
+  calculateNumberOfLotto() {
+    return this.#purchaseAmount / CONSTANTS.purchaseAmount.thousand;
   }
 
-  lottos(purchaseAmount) {
-    const numberOfLotto = this.numberOfLotto(purchaseAmount);
-    return this.#lottosInstance.generateLottos(numberOfLotto);
+  setBonusNumber(number) {
+    this.#bonusNumber = new BonusNumber(number).getformattedBonusNumber();
+  }
+
+  setWinningNumbers(numbers) {
+    this.#winningNumbers = new WinningNumbers(numbers).getFormattedWinningNumbers();
+  }
+
+  setLottos() {
+    const numberOfLotto = this.calculateNumberOfLotto();
+    this.#lottos = new LottoMachine(numberOfLotto);
+  }
+
+  getLottosString() {
+    return this.#lottos.getLottosString();
   }
 }
 

@@ -17,32 +17,36 @@ class LottoController {
 
   async #inputPurchaseAmount() {
     const purchaseAmount = await this.#inputView.readPurchaseAmount();
+    this.#lottoService.setPurchaseAmount(purchaseAmount);
 
-    return this.#printNumberOfLotto(purchaseAmount);
+    return this.#printNumberOfLotto();
   }
 
-  #printNumberOfLotto(purchaseAmount) {
-    const numberOfLotto = this.#lottoService.numberOfLotto(purchaseAmount);
+  #printNumberOfLotto() {
+    const numberOfLotto = this.#lottoService.calculateNumberOfLotto();
     this.#outputView.printNumberOfLottoString(numberOfLotto);
 
-    return this.#printLottos(purchaseAmount);
+    return this.#printLottos();
   }
 
-  #printLottos(purchaseAmount) {
-    const lottos = this.#lottoService.lottos(purchaseAmount);
-    this.#outputView.printLottosString(lottos);
+  #printLottos() {
+    this.#lottoService.setLottos();
+    const lottosString = this.#lottoService.getLottosString();
+    this.#outputView.printLottosString(lottosString);
 
-    return this.#inputWinningNumbers(lottos);
+    return this.#inputWinningNumbers();
   }
 
   async #inputWinningNumbers() {
     const winningNumbers = await this.#inputView.readWinningNumbers();
+    this.#lottoService.setWinningNumbers(winningNumbers);
 
     return this.#inputBonusNumber();
   }
 
   async #inputBonusNumber() {
     const bonusNumber = await this.#inputView.readBonusNumber();
+    this.#lottoService.setBonusNumber(bonusNumber);
   }
 }
 
