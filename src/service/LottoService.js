@@ -61,7 +61,6 @@ class LottoService {
   }
 
   getProfit() {
-    console.log(this.#profit.getProfit());
     return this.#profit.getProfit();
   }
 }

@@ -62,6 +62,7 @@ class LottoController {
   #printProfit() {
     this.#lottoService.setProfit();
     const profit = this.#lottoService.getProfit();
+    this.#outputView.printProfitString(profit);
   }
 }
 

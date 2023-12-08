@@ -18,6 +18,10 @@ const OutputView = {
     Console.print(MESSAGE.ranking.bonusMatch + `${ranking.bonus}개`);
     Console.print(MESSAGE.ranking.sixMatch + `${ranking.six}개`);
   },
+
+  printProfitString(profit) {
+    Console.print(`총 수익률은 ${profit}%입니다.`);
+  },
 };
 
 export default OutputView;
