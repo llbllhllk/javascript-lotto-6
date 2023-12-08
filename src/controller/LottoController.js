@@ -54,6 +54,7 @@ class LottoController {
   #printRanking() {
     this.#lottoService.setRanking();
     const ranking = this.#lottoService.getRanking();
+    this.#outputView.printRankingString(ranking);
   }
 }
 

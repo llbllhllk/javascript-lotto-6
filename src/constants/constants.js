@@ -1,3 +1,11 @@
+const prize = Object.freeze({
+  threeMatch: 5000,
+  fourMatch: 50000,
+  fiveMatch: 1500000,
+  bonusMatch: 30000000,
+  sixMatch: 2000000000,
+});
+
 const purchaseAmount = Object.freeze({
   thousand: 1000,
 });
@@ -22,6 +30,7 @@ const CONSTANTS = Object.freeze({
   winningNumbers,
   number,
   lotto,
+  prize,
 });
 
 export default CONSTANTS;
