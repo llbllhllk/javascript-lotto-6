@@ -47,6 +47,13 @@ class LottoController {
   async #inputBonusNumber() {
     const bonusNumber = await this.#inputView.readBonusNumber();
     this.#lottoService.setBonusNumber(bonusNumber);
+
+    return this.#printRanking();
+  }
+
+  #printRanking() {
+    this.#lottoService.setRanking();
+    const ranking = this.#lottoService.getRanking();
   }
 }
 

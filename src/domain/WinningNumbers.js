@@ -16,7 +16,7 @@ class WinningNumbers {
   #formatWinningNumbers(numbers) {
     return numbers
       .split(CONSTANTS.winningNumbers.separator)
-      .map(number => number.trim())
+      .map(number => Number(number.trim()))
       .filter(Boolean);
   }
 }
