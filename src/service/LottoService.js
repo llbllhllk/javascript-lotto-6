@@ -1,6 +1,7 @@
 import CONSTANTS from '../constants/constants.js';
 import BonusNumber from '../domain/BonusNumber.js';
 import LottoMachine from '../domain/LottoMachine.js';
+import Profit from '../domain/Profit.js';
 import PurchaseAmount from '../domain/PurchaseAmount.js';
 import Ranking from '../domain/Ranking.js';
 import WinningNumbers from '../domain/WinningNumbers.js';
@@ -15,6 +16,8 @@ class LottoService {
   #winningNumbers;
 
   #ranking;
+
+  #profit;
 
   setPurchaseAmount(purchaseAmount) {
     this.#purchaseAmount = new PurchaseAmount(purchaseAmount).getFormattedAmount();
@@ -41,6 +44,10 @@ class LottoService {
     this.#ranking = new Ranking(this.#winningNumbers, this.getLottos(), this.#bonusNumber);
   }
 
+  setProfit() {
+    this.#profit = new Profit(this.getRanking(), this.#purchaseAmount);
+  }
+
   getLottosString() {
     return this.#lottos.getLottosString();
   }
@@ -51,6 +58,11 @@ class LottoService {
 
   getRanking() {
     return this.#ranking.getRanking();
+  }
+
+  getProfit() {
+    console.log(this.#profit.getProfit());
+    return this.#profit.getProfit();
   }
 }
 

@@ -1,9 +1,14 @@
+const profit = Object.freeze({
+  percentage: 100,
+  profitRoundDecimals: 1,
+});
+
 const prize = Object.freeze({
-  threeMatch: 5000,
-  fourMatch: 50000,
-  fiveMatch: 1500000,
-  bonusMatch: 30000000,
-  sixMatch: 2000000000,
+  three: 5000,
+  four: 50000,
+  five: 1500000,
+  bonus: 30000000,
+  six: 2000000000,
 });
 
 const purchaseAmount = Object.freeze({
@@ -31,6 +36,7 @@ const CONSTANTS = Object.freeze({
   number,
   lotto,
   prize,
+  profit,
 });
 
 export default CONSTANTS;
