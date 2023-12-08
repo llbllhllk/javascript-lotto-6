@@ -25,17 +25,38 @@ class Ranking {
   #evaluateMatches(winningNumbers, lottos, bonusNumber) {
     const winningNumbersSet = new Set(winningNumbers);
     lottos.forEach(lotto => {
-      this.#checkMatches(lotto, winningNumbersSet, bonusNumber);
+      this.#checkMatchThree(lotto, winningNumbersSet);
+      this.#checkMatchFour(lotto, winningNumbersSet);
+      this.#checkMatchBonus(lotto, winningNumbersSet, bonusNumber);
+      this.#checkMatchSix(lotto, winningNumbersSet);
     });
   }
 
-  #checkMatches(lotto, winningNumbersSet, bonusNumber) {
-    if (this.#isMatched(lotto, winningNumbersSet, 5) && this.#isBonusMatched(lotto, bonusNumber))
-      return (this.#result.bonus += 1);
-    this.#result.three += this.#isMatched(lotto, winningNumbersSet, 3);
-    this.#result.four += this.#isMatched(lotto, winningNumbersSet, 4);
-    this.#result.five += this.#isMatched(lotto, winningNumbersSet, 5);
-    this.#result.six += this.#isMatched(lotto, winningNumbersSet, 6);
+  #checkMatchThree(lotto, winningNumbersSet) {
+    this.#result.three += this.#isMatched(lotto, winningNumbersSet, CONSTANTS.match.three);
+  }
+
+  #checkMatchFour(lotto, winningNumbersSet) {
+    this.#result.four += this.#isMatched(lotto, winningNumbersSet, CONSTANTS.match.four);
+  }
+
+  #checkMatchBonus(lotto, winningNumbersSet, bonusNumber) {
+    if (
+      this.#isMatched(lotto, winningNumbersSet, CONSTANTS.match.five) &&
+      this.#isBonusMatched(lotto, bonusNumber)
+    ) {
+      this.#result.bonus += 1;
+      return;
+    }
+    this.#checkMatchFive(lotto, winningNumbersSet);
+  }
+
+  #checkMatchFive(lotto, winningNumbersSet) {
+    this.#result.five += this.#isMatched(lotto, winningNumbersSet, CONSTANTS.match.five);
+  }
+
+  #checkMatchSix(lotto, winningNumbersSet) {
+    this.#result.six += this.#isMatched(lotto, winningNumbersSet, CONSTANTS.match.six);
   }
 
   #isMatched(lotto, winningNumbersSet, matched) {

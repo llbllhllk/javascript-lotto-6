@@ -3,6 +3,13 @@ const profit = Object.freeze({
   profitRoundDecimals: 1,
 });
 
+const match = Object.freeze({
+  three: 3,
+  four: 4,
+  five: 5,
+  six: 6,
+});
+
 const prize = Object.freeze({
   three: 5000,
   four: 50000,
@@ -37,6 +44,7 @@ const CONSTANTS = Object.freeze({
   lotto,
   prize,
   profit,
+  match,
 });
 
 export default CONSTANTS;

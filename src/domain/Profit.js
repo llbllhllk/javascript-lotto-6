@@ -19,9 +19,10 @@ class Profit {
   }
 
   #calculateTotalPrize(ranking) {
-    return Object.keys(ranking).reduce((total, category) => {
-      return total + ranking[category] * CONSTANTS.prize[category];
-    }, 0);
+    return Object.keys(ranking).reduce(
+      (total, category) => total + ranking[category] * CONSTANTS.prize[category],
+      0,
+    );
   }
 
   #roundProfit(profit) {

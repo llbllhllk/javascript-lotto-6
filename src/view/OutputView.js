@@ -12,11 +12,11 @@ const OutputView = {
 
   printRankingString(ranking) {
     Console.print(MESSAGE.print.rankingResult);
-    Console.print(MESSAGE.ranking.threeMatch + `${ranking.three}개`);
-    Console.print(MESSAGE.ranking.fourMatch + `${ranking.four}개`);
-    Console.print(MESSAGE.ranking.fiveMatch + `${ranking.five}개`);
-    Console.print(MESSAGE.ranking.bonusMatch + `${ranking.bonus}개`);
-    Console.print(MESSAGE.ranking.sixMatch + `${ranking.six}개`);
+    Console.print(`${MESSAGE.ranking.threeMatch}${ranking.three}개`);
+    Console.print(`${MESSAGE.ranking.fourMatch}${ranking.four}개`);
+    Console.print(`${MESSAGE.ranking.fiveMatch}${ranking.five}개`);
+    Console.print(`${MESSAGE.ranking.bonusMatch}${ranking.bonus}개`);
+    Console.print(`${MESSAGE.ranking.sixMatch}${ranking.six}개`);
   },
 
   printProfitString(profit) {

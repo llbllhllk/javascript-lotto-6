@@ -3,7 +3,7 @@ import MESSAGE from '../constants/message.js';
 import PurchaseAmountValidator from '../utils/validators/PurchaseAmountValidator.js';
 import WinningNumbersValidator from '../utils/validators/WinningNumbersValidator.js';
 import BonusNumberValidator from '../utils/validators/BonusNumberValidator.js';
-import reTry from '../utils/retry.js';
+import reTry from '../utils/reTry.js';
 
 const InputView = {
   async readPurchaseAmount() {
